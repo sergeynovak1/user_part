@@ -1,9 +1,9 @@
 from django.urls import path
 from django.views.generic import RedirectView
 
-from .views import login_view, logout_view, RegistrationView
+from .views import RegistrationView, LoginView, LogoutView
 urlpatterns = [
     path("registration/", RegistrationView.as_view(), name='registration'),
-    path("login/", login_view, name='login'),
-    path("logout/", logout_view, name='logout'),
+    path("login/", LoginView.as_view(), name='login'),
+    path("logout/", LogoutView.as_view(), name='logout'),
 ]
